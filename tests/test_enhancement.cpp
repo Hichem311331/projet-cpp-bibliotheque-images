@@ -5,7 +5,7 @@ using namespace std;
 using namespace cv;
 
 int main() {
-    cout << "=== Test Algorithme Rehaussement ===" << endl;
+    cout << " Test Algorithme Rehaussement " << endl;
    
     Mat testImage = Mat::zeros(300, 300, CV_8UC1);
     circle(testImage, Point(150, 150), 80, Scalar(255), -1);
