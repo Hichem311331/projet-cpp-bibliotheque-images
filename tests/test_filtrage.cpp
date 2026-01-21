@@ -17,22 +17,21 @@ int main()
 
     Filtrage f(img);
 
-    Mat moyenne = f.filtreMoyenne();
+    Mat moyenneur = f.filtreMoyenneur();
     Mat gaussien = f.filtreGaussien();
     Mat laplacien = f.filtreLaplacien();
 
     f.afficher(img, "Original");
-    f.afficher(moyenne, "Moyenne");
+    f.afficher(moyenneur, "Moyenne");
     f.afficher(gaussien, "Gaussien");
     f.afficher(laplacien, "Laplacien");
 
     waitKey(0);
 
-    f.sauvegarder(moyenne, "moyenne.png");
+    f.sauvegarder(moyenneur, "moyenne.png");
     f.sauvegarder(gaussien, "gaussien.png");
     f.sauvegarder(laplacien, "laplacien.png");
 
     return 0;
 }
-
 
