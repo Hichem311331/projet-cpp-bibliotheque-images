@@ -20,9 +20,9 @@ void Filtrage::sauvegarder(const Mat& img, const string& nom)
 }
 
 // filtre moyenneur 3x3
-Mat Filtrage::filtreMoyenne()
+Mat Filtrage::filtreMoyenneur()
 {
-    Mat out = image.clone();
+    Mat imagefiltree = image.clone();
 
     for (int y = 1; y < image.rows - 1; y++)
     {
@@ -34,15 +34,15 @@ Mat Filtrage::filtreMoyenne()
                 for (int i = -1; i <= 1; i++)
                     somme += image.at<uchar>(y+j, x+i);
 
-            out.at<uchar>(y,x) = somme / 9;
+            imagefiltree.at<uchar>(y,x) = somme / 9;
         }
     }
-    return out;
+    return imagefiltree;
 }
 // filtre gaussien 3x3
 Mat Filtrage::filtreGaussien()
 {
-    Mat out = image.clone();
+    Mat imagefiltree = image.clone();
 
     int K[3][3] = {
         {1,2,1},
@@ -60,16 +60,16 @@ Mat Filtrage::filtreGaussien()
                 for (int i = -1; i <= 1; i++)
                     somme += image.at<uchar>(y+j, x+i) * K[j+1][i+1];
 
-            out.at<uchar>(y,x) = somme / 16;
+            imagefiltree.at<uchar>(y,x) = somme / 16;
         }
     }
-    return out;
+    return imagefiltree;
 }
 
 // filtre laplacien 
 Mat Filtrage::filtreLaplacien()
 {
-    Mat out = image.clone();
+    Mat imagefiltree = image.clone();
 
     int K[3][3] = {
         {0,-1,0},
@@ -90,8 +90,8 @@ Mat Filtrage::filtreLaplacien()
             if (somme < 0) somme = 0;
             if (somme > 255) somme = 255;
 
-            out.at<uchar>(y,x) = somme;
+            imagefiltree.at<uchar>(y,x) = somme;
         }
     }
-    return out;
+    return imagefiltree;
 }
