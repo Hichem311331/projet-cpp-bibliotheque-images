@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-    Mat img = imread("image.png", IMREAD_GRAYSCALE);
+    Mat img = imread("image.jpg", IMREAD_GRAYSCALE);
 
     if (img.empty())
     {
