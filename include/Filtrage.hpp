@@ -15,7 +15,7 @@ private:
 public:
     Filtrage(Mat img);
 
-    Mat filtreMoyenne();
+    Mat filtreMoyenneur();
     Mat filtreGaussien();
     Mat filtreLaplacien();
 
