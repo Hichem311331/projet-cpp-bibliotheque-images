@@ -29,7 +29,6 @@ private:
         {1, -4, 1},
         {0,  1, 0}
     };
-    
     int convolutionPoint(const Image& img, int y, int x);
     int clamp(int valeur, int min, int max);
 
